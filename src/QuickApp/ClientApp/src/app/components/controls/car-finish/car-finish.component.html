@@ -1,0 +1,41 @@
+<div>
+    <h2 class="center">Gotowe</h2>
+    <table class="table">
+        <tr>
+            <th>
+                Model
+            </th>
+            <th>
+                Kolor
+            </th>
+            <th>
+                ArrivalTime
+            </th>
+            <th>
+                WashType
+            </th>
+            <th>
+                Zarządzanie
+            </th>
+        </tr>
+        <tr *ngFor="let car of cars">
+            <td>
+                {{car.model}}
+            </td>
+            <td>
+                {{car.color}}
+            </td>
+            <td>
+                {{car.arrivalTime}}
+            </td>
+            <td>
+                {{car.washType}}
+            </td>
+            <td>
+                <a routerLink="/car-lastEdit/{{car.carId}}">
+                    <button type="button" class="btn btn-primary">Oddane</button>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

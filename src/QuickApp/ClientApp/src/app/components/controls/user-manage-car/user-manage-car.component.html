@@ -1,0 +1,132 @@
+<h1>
+    Virtual assistant
+</h1>
+<div class="row">
+    <div class="col-sm-6">
+        <pre> List of comands:
+             1) /getCarInfo <"car registration">
+             2) /rezerwateWash
+             3) /video 
+             4) /priceList
+        </pre>
+        <input type="text" class="form-control" [(ngModel)]="str">
+        <button class="btn btn-primary" (click)="checkInfo()">Check</button>
+
+        <pre *ngIf="getCarInfoSection">
+            <p>Car number: qwe</p>
+            <p>Status: {{carData.status}}</p>
+        </pre>
+
+        <pre *ngIf="videoSection">
+                <p>Link to video: <a href="https://www.youtube.com/embed/watch?v=pMF5T9-t7Vs">https://www.youtube.com/embed/watch?v=pMF5T9-t7Vs</a></p>
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/watch?v=pMF5T9-t7Vs">
+                </iframe>
+        </pre>
+
+        <pre *ngIf="priceSection">
+            Price list:
+            1) wash - 30 zl;
+            2) wash - 30 zl;
+            3) wash - 30 zl;
+            4) wash - 30 zl;
+            5) wash - 30 zl;
+        </pre>
+
+        <pre *ngIf="notFound">
+                <p>404</p>
+        </pre>
+
+    </div>
+    <div class="col-sm-6">
+        <img src="https://img-s3.onedio.com/id-579692f45ffeb0862b1f9a2c/rev-0/raw/s-978513b2aa38010e5a57d781bfe098d49ac65834.jpg"/>
+    </div>
+  </div>
+
+  <div [@fadeInOut] class="container" *ngIf="rezerwationSection">
+        <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+    <table class="table table-striped table-hover table-responsive">
+        <tbody>
+          <tr>
+            <td>
+              <div class="row">
+                <label for="input${1/(\w+)/\u\1/g}" class="col-sm-3 control-label">Model</label>
+                <div class="input-group col-lg-4">
+                  <span class="input-group-addon">
+                    <i class="fa fa-car"></i>
+                  </span>
+                  <input type="text" id="input${1/(\w+)/\u\1/g}" class="form-control" required [(ngModel)]="car.model" name="model" #model="ngModel">
+                </div>
+              </div>
+            </td>
+          </tr>
+    
+           <tr>
+            <td>
+              <div class="row">
+                <label for="input${1/(\w+)/\u\1/g}" class="col-sm-3 control-label">Rejestracja</label>
+                <div class="input-group col-lg-4">
+                  <span class="input-group-addon">
+                    <i class="fa fa-drivers-license"></i>
+                  </span>
+                  <input type="text" id="input${1/(\w+)/\u\1/g}" class="form-control" required [(ngModel)]="car.registration" name="registration" #registration="ngModel">
+                </div>
+              </div>
+            </td>
+          </tr>
+    
+          <tr>
+            <td>
+              <div class="row">
+                <label for="input${1/(\w+)/\u\1/g}" class="col-sm-3 control-label">Przyjęty o godzine</label>
+                <div class="input-group col-lg-4">
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                  <input type="date" id="input${1/(\w+)/\u\1/g}" class="form-control" required [(ngModel)]="car.arrivalTime" name="model" #model="ngModel">
+                </div>
+              </div>
+            </td>
+          </tr>
+          
+           <tr>
+            <td>
+              <div class="row">
+                <label for="input${1/(\w+)/\u\1/g}" class="col-sm-3 control-label">Kolor</label>
+                <div class="input-group col-lg-4">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-text-color"></i>
+                  </span>
+                  <select class="form-control" [(ngModel)]="car.color" name="color" required #color="ngModel">
+                        <option *ngFor="let type of arrColor" [ngValue]="type.id">{{type.name}}</option>
+                  </select> 
+                </div>
+              </div>
+            </td>
+          </tr>
+    
+           <tr>
+            <td>
+              <div class="row">
+                <label for="input${1/(\w+)/\u\1/g}" class="col-sm-3 control-label">Usluga</label>
+                <div class="input-group col-lg-4">
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar-check-o"></i>
+                  </span>
+                  <select class="form-control" [(ngModel)]="car.washType" name="washType" required #washType="ngModel">
+                        <option *ngFor="let type of arrService" [ngValue]="type.id">{{type.name}}</option>
+                  </select>               
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </form>
+      <div class="form-group">
+            <div class="col-md-10">
+                    <button type="button" class="btn btn-success" (click)="onSubmit()">{{'carTable.Save' | translate}}</button>   
+            </div>
+        </div>
+    </div>
+    

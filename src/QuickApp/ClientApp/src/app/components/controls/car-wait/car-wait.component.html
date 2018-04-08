@@ -1,0 +1,39 @@
+<div>
+    <h2 class="center">Oczekujące</h2>
+    <table class="table">
+        <tr>
+            <th>
+                Model
+            </th>
+            <th>
+                Kolor
+            </th>
+            <th>
+                ArrivalTime
+            </th>
+            <th>
+                WashType
+            </th>
+            <th>
+                Zarządzanie
+            </th>
+        </tr>
+        <tr *ngFor="let car of cars">
+            <td>
+               {{car.model}}
+            </td>
+            <td>
+                {{car.color}}
+            </td>
+            <td>
+                {{car.arrivalTime}}
+            </td>
+            <td>
+                {{car.washType}}
+            </td>
+            <td>            
+                <button type="button" class="btn btn-primary" (click)="changeStatus(car.carId)">InWork</button>     
+            </td>
+        </tr>
+    </table>
+</div>

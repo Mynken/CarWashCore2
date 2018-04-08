@@ -1,0 +1,81 @@
+tbody {
+    background: #eeeeee;
+    border-radius: 10px;
+}
+
+    tbody .fa {
+        font-size: 18px;
+    }
+
+    tbody a .fa-edit {
+        color: green;
+    }
+
+    tbody a .fa-info-circle {
+        color: #354CC3;
+    }
+
+    tbody a .fa-trash-o {
+        color: red;
+    }
+
+    tbody tr {
+        height: 57px;
+        padding: 20px 0;
+    }
+
+.th_first {
+    border-left: 1px solid silver;
+}
+
+.th_last {
+    width: 114px;
+}
+.table th {
+    border-right: 1px solid silver;
+}
+
+.table td {
+    border-right: 1px solid silver;
+    min-width: 61px;
+}
+
+tbody td a i {
+    text-align: center;
+    margin: 4px 0 0 0;
+}
+
+    tbody td a i:hover {
+        opacity: 0.7;
+    }
+    .table thead > tr > th, .table tbody > tr > th, .table tfoot > tr > th, .table thead > tr > td, .table tbody > tr > td, .table tfoot > tr > td {
+        vertical-align: middle;
+        text-align: center;
+        padding: 15px 5px;
+    }
+
+.logo {
+   margin-top: 15px;
+   margin-bottom: 5px;
+   text-align: center;
+}
+
+.logo_image {
+    alt: "Myjnia";
+    width: 250px;
+    height: 100px; 
+}
+
+.nowDate {
+    text-align: right;
+    width: 83%;
+    vertical-align: top;
+    display: inline-block;
+    font-weight: 800;
+}
+
+.nowBalance {
+    text-align: right;
+    font-weight: 800;
+    width: 99%;
+}
