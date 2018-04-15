@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace QuickApp.ViewModels
+namespace CarWashApp.ViewModels
 {
     public class CustomerViewModel
     {

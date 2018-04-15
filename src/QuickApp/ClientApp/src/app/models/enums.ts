@@ -32,7 +32,8 @@ export enum Status {
     Waiting = 1,
     InWork = 2,
     Finished = 3,
-    Oddane = 4
+    Oddane = 4,
+    Rezerwation = 5
 }
 
 export enum CarType {

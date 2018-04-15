@@ -4,7 +4,7 @@ import { CarService } from '../../../services/car.service';
 import { ConfigurationService } from '../../../services/configuration.service';
 import { Payment, Service, Color, CarType, WorkMode, Status } from '../../../models/enums';
 import { fadeInOut } from '../../../services/animations';
-import { FormGroup, Form } from '@angular/forms';
+import { FormGroup, Form, NgForm } from '@angular/forms';
 import { AlertService, MessageSeverity } from '../../../services/alert.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -18,7 +18,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CarDataComponent implements OnInit {
 
     @ViewChild('createForm')
-    createForm: Form;
+    createForm: NgForm;
 
     @Input() editMode: boolean;
     @Input() mode: number;
@@ -69,8 +69,8 @@ export class CarDataComponent implements OnInit {
     }
 
     onSubmit() {
-        // this.createForm['status'] === 'VALID'
-        if (5 > 1) {
+
+        if (this.createForm['status'] === 'VALID') {
             switch (this.mode) {
                 case WorkMode.Create: {
                     this.car.arrivalTime = new Date();
@@ -89,6 +89,7 @@ export class CarDataComponent implements OnInit {
                         break;
                 }
                 case WorkMode.Rezerwation: {
+                    this.car.status = Status.Rezerwation.toString();
                     this.carInfo.createCar(this.car).subscribe(() => {
                         this.alertService.showMessage('Success!', `Car added to  rezerwation list`, MessageSeverity.success);
                         this.router.navigateByUrl('/home');
@@ -96,6 +97,7 @@ export class CarDataComponent implements OnInit {
                         break;
                 }
                 case WorkMode.GiveBack: {
+                    this.car.pickUpTime = new Date();
                     this.car.status = Status.Oddane.toString();
                     this.carInfo.updateCar(this.car).subscribe(() => {
                         this.alertService.showMessage('Success!', `Car successfully has been given back`, MessageSeverity.success);
@@ -110,25 +112,3 @@ export class CarDataComponent implements OnInit {
     }
 
 }
-
-// return this.endpointFactory.getLoginEndpoint<LoginResponse>(userName, password)
-// .map(response => this.processLoginResponse(response, rememberMe));
-
- // if (this.rezerwationMode) {
-            //     this.carInfo.createCar(this.car).subscribe(() => {
-            //         this.alertService.showMessage('Success!', `Car added to  rezerwation list`, MessageSeverity.success);
-            //         this.router.navigateByUrl('/home');
-            //         });
-            // }
-            // if (!this.editMode) {
-            //     this.car.arrivalTime = new Date();
-            //   this.carInfo.createCar(this.car).subscribe(() => {
-            //     this.alertService.showMessage('Success!', `Car added to list`, MessageSeverity.success);
-            //     this.router.navigateByUrl('/home');
-            //     });
-            // } else {
-            //     this.carInfo.updateCar(this.car).subscribe(() => {
-            //         this.alertService.showMessage('Success!', `Car updated`, MessageSeverity.success);
-            //         this.router.navigateByUrl('/home');
-            //         });
-            // }

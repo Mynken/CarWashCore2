@@ -1,6 +1,6 @@
 ﻿using DAL.Models;
 using FluentValidation;
-using QuickApp.Helpers;
+using CarWashApp.Helpers;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 
-namespace QuickApp.ViewModels
+namespace CarWashApp.ViewModels
 {
     public class UserViewModel
     {

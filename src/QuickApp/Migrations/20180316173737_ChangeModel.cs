@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace QuickApp.Migrations
+namespace CarWashApp.Migrations
 {
     public partial class ChangeModel : Migration
     {

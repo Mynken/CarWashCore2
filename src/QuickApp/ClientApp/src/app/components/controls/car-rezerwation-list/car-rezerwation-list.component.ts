@@ -6,18 +6,15 @@ import { Payment, Service, Color, CarType, Status } from '../../../models/enums'
 import { error } from 'selenium-webdriver';
 
 @Component({
-    selector: 'car-info',
-    templateUrl: './car-info.component.html',
-    styleUrls: ['./car-info.component.css']
+    selector: 'car-rezerwation-list',
+    templateUrl: './car-rezerwation-list.component.html',
+    styleUrls: ['./car-rezerwation-list.component.css']
 })
 
-export class CarInfoComponent implements OnInit {
+export class CarRezerwationListComponent implements OnInit {
     public cars: Car[] = [];
     public now: Date = new Date();
-    public carsAmount: number;
 
-    public cash: number;
-    public card: number;
     logo = require('../../../assets/images/background.jpg');
 
     constructor(private carInfo: CarService) {}
@@ -31,9 +28,8 @@ export class CarInfoComponent implements OnInit {
     }
 
     workWithData () {
-        this.cars = this.cars.filter(x => x.arrivalTime.toString().substring(0, 10) === new Date().toISOString().substring(0, 10));
-        this.filterPayments(this.cars);
-        this.carsAmount = this.cars.length;
+        console.log(this.cars);
+        this.cars = this.cars.filter(x => x.status.toString() === Status.Rezerwation.toString());
         this.cars.forEach(element => {
             element.color = this.getBindings(element.color, Color),
             element.washType = this.getBindings(element.washType, Service),
@@ -41,14 +37,6 @@ export class CarInfoComponent implements OnInit {
         });
     }
 
-    filterPayments (carInfo: Car[]) {
-        this.cash = 0;
-        this.card = 0;
-        const cash = carInfo.filter(x => Number(x.payment) === Payment.Cash);
-        const card = carInfo.filter(x => Number(x.payment) === Payment.Card);
-        cash.forEach(x => this.cash += x.cost );
-        card.forEach(x => this.card += x.cost );
-    }
 
     deleteCar(id: number) {
         this.carInfo.deleteCar(id)

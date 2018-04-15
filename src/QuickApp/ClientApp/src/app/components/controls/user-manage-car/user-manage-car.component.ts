@@ -4,7 +4,7 @@ import { CarService } from '../../../services/car.service';
 import { ConfigurationService } from '../../../services/configuration.service';
 import { Service, Color, CarType, Status} from '../../../models/enums';
 import { AlertService, MessageSeverity } from '../../../services/alert.service';
-import { Form } from '@angular/forms';
+import { Form, NgForm } from '@angular/forms';
 import { fadeInOut } from '../../../services/animations';
 import { error } from 'util';
 
@@ -18,7 +18,7 @@ import { error } from 'util';
 export class UserManageCarComponent implements OnInit {
 
     @ViewChild('createForm')
-    createForm: Form;
+    createForm: NgForm;
     public car: ICar = new Car();
     public carData: ICar = new Car();
     public arrService: { id: number; name: string }[] = [];
@@ -87,8 +87,8 @@ export class UserManageCarComponent implements OnInit {
         }
     }
     onSubmit() {
-         // this.createForm['status'] === 'VALID'
-         if (5 > 1) {
+         if (this.createForm['status'] === 'VALID') {
+             this.car.status = Status.Rezerwation.toString();
             this.carInfo.createCar(this.car).subscribe(() => {
                 this.alertService.showMessage('Success!', `Car added to  rezerwation list`, MessageSeverity.success);
                 this.rezerwationSection = false;

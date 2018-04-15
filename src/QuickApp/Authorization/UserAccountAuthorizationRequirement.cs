@@ -1,12 +1,12 @@
 ﻿using DAL.Core;
 using Microsoft.AspNetCore.Authorization;
-using QuickApp.Helpers;
+using CarWashApp.Helpers;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickApp.Authorization
+namespace CarWashApp.Authorization
 {
     public class UserAccountAuthorizationRequirement : IAuthorizationRequirement
     {

@@ -4,8 +4,8 @@ export interface ICar {
     typeOfCar: string;
     color: string;
     registration: string;
-    arrivalTime: Date; // date?
-    pickUpTime: string;  // date?
+    arrivalTime: Date;
+    pickUpTime: Date;
     washType: string;
     cost: number;
     paidConfirmed: boolean;
@@ -21,8 +21,8 @@ export class Car implements ICar {
     typeOfCar: string;
     color: string;
     registration: string;
-    arrivalTime: Date; // date?
-    pickUpTime: string;  // date?
+    arrivalTime: Date;
+    pickUpTime: Date;
     washType: string;
     cost: number;
     paidConfirmed: boolean;

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace QuickApp.Migrations
+namespace CarWashApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20180401134325_ChangeType")]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using System.ComponentModel.DataAnnotations;
 
-namespace QuickApp.ViewModels
+namespace CarWashApp.ViewModels
 {
     public class UserPatchViewModel
     {

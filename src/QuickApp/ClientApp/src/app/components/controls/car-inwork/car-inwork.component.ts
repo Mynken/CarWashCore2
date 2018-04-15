@@ -22,18 +22,11 @@ export class CarInworkComponent implements OnInit {
     ngOnInit(): void {
         this.carInfo.getCarList()
         .subscribe(
-            data => { this.listCars = data;
-                console.log(this.listCars);
-                // this.listCars = data;
-                // console.log(this.listCars);
-                // // this.cars = data;
-                // const newList = this.workWithData(data);
-                // console.log(newList);
-            }
+            data => {
+                this.cars = [...data];
+                this.listCars = [...data];
+                this.workWithData(); }
         );
-
-        const newList = this.workWithData(this.listCars);
-        console.log(newList);
 
         this.carInfo.getCarList()
         .subscribe(
@@ -42,10 +35,10 @@ export class CarInworkComponent implements OnInit {
 
     }
 
-    workWithData (cars) {
-        cars = cars.filter(x => Number(x.status) === Status.InWork);
+    workWithData () {
+        this.cars = this.cars.filter(x => Number(x.status) === Status.InWork);
 
-        const newList = cars;
+        const newList = this.cars;
 
         newList.forEach(element => {
             element.color = this.getBindings(element.color, Color),
@@ -56,15 +49,13 @@ export class CarInworkComponent implements OnInit {
     }
 
     changeStatus(id: number) {
-        console.log(this.listCars);
         this.car = this.test.filter(x => x.carId === id)[0];
-        console.log(this.car);
-        // this.car.status = Status.Finished.toString();
-        // this.carInfo.updateCar(this.car)
-        //     .subscribe( () => {
-        //         this.alertService.showMessage('Success!', `Car updated`, MessageSeverity.success);
-        //         this.cars = this.cars.filter(x => x.carId !== id);
-        //     });
+        this.car.status = Status.Finished.toString();
+        this.carInfo.updateCar(this.car)
+            .subscribe( () => {
+                this.alertService.showMessage('Success!', `Car updated`, MessageSeverity.success);
+                this.cars = this.cars.filter(x => x.carId !== id);
+            });
     }
 
     getBindings(valueId: any, arr: any) {

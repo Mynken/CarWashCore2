@@ -12,10 +12,10 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using QuickApp.Helpers;
+using CarWashApp.Helpers;
 using DAL;
 
-namespace QuickApp
+namespace CarWashApp
 {
     public class Program
     {

@@ -42,7 +42,6 @@ import { AppComponent } from "./components/app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { SettingsComponent } from "./components/settings/settings.component";
-import { AboutComponent } from "./components/about/about.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 
 import { UserInfoComponent } from "./components/controls/user-info.component";
@@ -60,6 +59,9 @@ import { CarInworkComponent } from './components/controls/car-inwork/car-inwork.
 import { CarFinishComponent } from './components/controls/car-finish/car-finish.component';
 import { CarLastEditComponent } from './components/controls/car-lastEdit/car-lastEdit.component';
 import { UserManageCarComponent } from './components/controls/user-manage-car/user-manage-car.component';
+import { CarHistoryComponent } from './components/controls/car-history/car-history.component';
+import { CarRezerwationListComponent } from './components/controls/car-rezerwation-list/car-rezerwation-list.component';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -89,10 +91,10 @@ import { UserManageCarComponent } from './components/controls/user-manage-car/us
         SettingsComponent,
         UsersManagementComponent, UserInfoComponent, UserPreferencesComponent,
         RolesManagementComponent, RoleEditorComponent,
-        AboutComponent,
         NotFoundComponent,
         CarInfoComponent, CarDataComponent, CarCreateComponent, CarEditComponent, CarRezerwationComponent,
         CarWaitComponent, CarInworkComponent, CarFinishComponent, CarLastEditComponent,
+        CarHistoryComponent, CarRezerwationListComponent,
         UserManageCarComponent,
         EqualValidator,
         LastElementDirective,

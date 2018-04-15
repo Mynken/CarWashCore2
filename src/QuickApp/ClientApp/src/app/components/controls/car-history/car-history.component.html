@@ -1,0 +1,76 @@
+<div>
+    <p class="logo"><img [src]="logo" class="logo_image"/></p>
+    <p style="display: inline-block;">
+
+    <p class="nowDate">Saldo na dzien {{now | date}} : {{moneyAmount}} </p>
+    <p style="font-weight: 800">Samochodów: {{carsAmount}}</p>
+    <table class="table">
+        <tr>
+            <th>
+                Model
+            </th>
+            <th>
+                Kolor
+            </th>
+            <th>
+                Registration
+            </th>
+            <th>
+                ArrivalTime
+            </th>
+            <th>
+                PickUpTime
+            </th>
+            <th>
+                WashType
+            </th>
+            <th>
+                Cost
+            </th>
+            <th>
+                Faktura
+            </th>
+            <th>
+                Status
+            </th>
+            <th class="admin">
+                Zarządzanie
+            </th>
+        </tr>
+        <tr *ngFor="let car of cars">
+            <td>
+               {{car.model}}
+            </td>
+            <td>
+                {{car.color}}
+            </td>
+            <td>
+                {{car.registration}}
+            </td>
+            <td>
+                {{car.arrivalTime}}
+            </td>
+            <td>
+                {{car.pickUpTime}}
+            </td>
+            <td>
+                {{car.washType}}
+            </td>
+            <td>
+                {{car.cost}}
+            </td>
+            <td>
+               <input type="checkbox" disabled="disabled" [checked]="car.faktura" >
+            </td>
+            <td [style.color] = "car.status === 'Oddane' ? 'orangered' : ''">
+                {{car.status}}
+            </td>
+            <td>
+                <a routerLink="/car-edit/{{car.carId}}">
+                    <button type="button" class="btn btn-primary">{{'carTable.Edit' | translate}}</button>
+                </a>
+                <button type="button" class="btn btn-danger" (click)="deleteCar(car.carId)">{{'carTable.Delete' | translate}}</button>     
+            </td>
+        </tr>
+    </table>
+</div>

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickApp.Helpers
+namespace CarWashApp.Helpers
 {
     public static class LoggingEvents
     {

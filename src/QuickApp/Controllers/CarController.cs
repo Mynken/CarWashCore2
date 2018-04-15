@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using AutoMapper;
 using FoodOrder.DAL.Models;
 
-namespace QuickApp.Controllers
+namespace CarWashApp.Controllers
 {
     [Produces("application/json")]
     [Route("api/Cars")]

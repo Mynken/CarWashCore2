@@ -21,8 +21,9 @@
                         <li routerLinkActive="active"  *ngIf="canViewCustomers"><a routerLink="/inWait">Oczekujące</a></li>
                         <li routerLinkActive="active" *ngIf="canViewCustomers"><a routerLink="/inWork">W pracy</a></li>
                         <li routerLinkActive="active" *ngIf="canViewCustomers"><a routerLink="/finished">Gotowe</a></li>
-                        <li routerLinkActive="active"><a routerLink="/about">{{'mainMenu.About' | translate}}</a></li>
-                        <li routerLinkActive="active"><a routerLink="/user-manage-car">Manage car</a></li>
+                        <li routerLinkActive="active"  *ngIf="canViewCustomers"><a routerLink="/car-history">History</a></li>
+                        <li routerLinkActive="active" *ngIf="canViewCustomers" ><a routerLink="/car-rezerwation-list">Rezerwation List</a></li>
+                        <li routerLinkActive="active" *ngIf="!canViewCustomers"><a routerLink="/user-manage-car">Manage car</a></li>
                     </ul>
                     <ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">
                         <li (click)="logout()"><a href="javascript:;"><span class="glyphicon glyphicon-log-out"></span> {{'mainMenu.Logout' | translate}}</a></li>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
-namespace QuickApp.Controllers
+namespace CarWashApp.Controllers
 {
     public class HomeController : Controller
     {

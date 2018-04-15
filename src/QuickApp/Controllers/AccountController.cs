@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using QuickApp.ViewModels;
+using CarWashApp.ViewModels;
 using AutoMapper;
 using DAL.Models;
 using DAL.Core.Interfaces;
-using QuickApp.Authorization;
-using QuickApp.Helpers;
+using CarWashApp.Authorization;
+using CarWashApp.Helpers;
 using Microsoft.AspNetCore.JsonPatch;
 using DAL.Core;
 
-namespace QuickApp.Controllers
+namespace CarWashApp.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]

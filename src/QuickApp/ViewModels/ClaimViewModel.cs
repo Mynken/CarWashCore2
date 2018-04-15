@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace QuickApp.ViewModels
+namespace CarWashApp.ViewModels
 {
     public class ClaimViewModel
     {

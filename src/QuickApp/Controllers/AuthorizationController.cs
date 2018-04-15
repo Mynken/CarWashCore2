@@ -14,7 +14,7 @@ using DAL.Core;
 using Microsoft.Extensions.Options;
 using System.Security.Claims;
 
-namespace QuickApp.Controllers
+namespace CarWashApp.Controllers
 {
     public class AuthorizationController : Controller
     {

@@ -1,8 +1,3 @@
-// ====================================================
-// More Templates: https://www.ebenmonney.com/templates
-// Email: support@ebenmonney.com
-// ====================================================
-
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,9 +16,9 @@ using Newtonsoft.Json;
 using DAL.Core;
 using DAL.Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using QuickApp.ViewModels;
-using QuickApp.Helpers;
-using QuickApp.Authorization;
+using CarWashApp.ViewModels;
+using CarWashApp.Helpers;
+using CarWashApp.Authorization;
 using AspNet.Security.OpenIdConnect.Primitives;
 using AspNet.Security.OAuth.Validation;
 using Microsoft.AspNetCore.Identity;
@@ -33,7 +28,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 using System.Collections.Generic;
 
-namespace QuickApp
+namespace CarWashApp
 {
     public class Startup
     {
@@ -144,7 +139,7 @@ namespace QuickApp
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "FoodOrder", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "CarWash", Version = "v1" });
 
                 c.AddSecurityDefinition("OpenID Connect", new OAuth2Scheme
                 {
@@ -255,6 +250,7 @@ namespace QuickApp
 
                 if (env.IsDevelopment())
                 {
+                    spa.Options.StartupTimeout = new TimeSpan(0, 0, 80);
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickApp.Helpers
+namespace CarWashApp.Helpers
 {
     [AttributeUsage(AttributeTargets.Property)]
     public sealed class MinimumCountAttribute : ValidationAttribute

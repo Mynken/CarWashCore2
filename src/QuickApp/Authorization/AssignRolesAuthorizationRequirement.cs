@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace QuickApp.Authorization
+namespace CarWashApp.Authorization
 {
     public class AssignRolesAuthorizationRequirement : IAuthorizationRequirement
     {
