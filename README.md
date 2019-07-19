@@ -2,6 +2,9 @@
 [![MIT license](https://cdn.rawgit.com/emonney/tempa/7e9d69ad/MITLicense.png)](https://github.com/emonney/QuickApp/blob/master/LICENSE)
 
 ## Build Status
+[![Build status](https://ci.appveyor.com/api/projects/status/6yojesrvj7d4q51c?svg=true)](https://ci.appveyor.com/project/GaProgMan/dwcheckapi)
+
+## Build Status
 [![Build Status](https://ci.appveyor.com/project/Mynken/carwashcore2)]
 (https://ci.appveyor.com/project/Mynken/carwashcore2)
 
