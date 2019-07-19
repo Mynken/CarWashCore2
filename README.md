@@ -2,7 +2,7 @@
 [![MIT license](https://cdn.rawgit.com/emonney/tempa/7e9d69ad/MITLicense.png)](https://github.com/emonney/QuickApp/blob/master/LICENSE)
 
 ## Build Status
-[![Build status](https://ci.appveyor.com/api/projects/status/05eocgeoy9iy582o?svg=true)](https://ci.appveyor.com/project/Mynken/carwashcore2)
+[![Build status](https://ci.appveyor.com/api/projects/status/05eocgeoy9iy582o/branch/master?svg=true)](https://ci.appveyor.com/project/Mynken/carwashcore2/branch/master)
 
 A startup **Angular 5 / ASP.NET Core 2.0** (cross-platform ) **project** with an end-to-end login, user and role management implementation.
 
