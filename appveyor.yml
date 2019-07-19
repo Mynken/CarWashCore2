@@ -29,7 +29,6 @@ test_script:
   # # run the unit tests (requires changing into the test directory)
   # - cmd: cd tests
   # - cmd: dotnet xunit
-    - cmd: "test"
 on_finish :
   # any cleanup in here
 deploy: off
