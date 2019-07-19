@@ -14,12 +14,12 @@ before_build:
   # Display minimal restore text
   - cmd: dotnet restore ./src/QuickApp/CarWashApp.csproj --verbosity m
 build_script:
-  # output will be in ./src/bin/debug/netcoreapp2.0/publish
+  # output will be in ./src/bin/debug/netcoreapp2.0
   - cmd: dotnet publish ./src/QuickApp/CarWashApp.csproj
 after_build:
   # For once the build has completed
 artifacts:
- - path: '\src\QuickApp\bin\Debug\netcoreapp2.0\publish'
+ - path: '\src\QuickApp\bin\Debug\netcoreapp2.0'
    name: WebSite
    type: WebDeployPackage
 clone_depth: 1
