@@ -33,7 +33,7 @@
     "@swimlane/ngx-datatable": "^11.2.0",
     "bootstrap": "^3.3.7",
     "bootstrap-datepicker": "^1.7.1",
-    "bootstrap-select": "^1.12.4",
+    "bootstrap-select": "^1.13.6",
     "bootstrap-toggle": "^2.2.2",
     "chart.js": "^2.7.1",
     "core-js": "^2.5.3",
